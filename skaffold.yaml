@@ -15,7 +15,7 @@ deploy:
       chartPath: kubernetes/helm
       namespace: cowweb-dev
       values:
-        image: docker.io/hhayakaw/cowweb
+        image: maho/cowweb
 #      valuesFilePath: kubernetes/dev/helm-values.yaml
       setValues:
         replicaCount: 1
@@ -29,7 +29,7 @@ profiles:
   - name: release
     build:
       artifacts:
-      - imageName: docker.io/hhayakaw/cowweb
+      - imageName: maho/cowweb
         workspace: .
         docker:
           dockerfilePath: ./kubernetes/container/Dockerfile_release
