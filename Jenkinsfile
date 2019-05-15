@@ -26,6 +26,9 @@ podTemplate(
           """
         }
       }
+      stage('dind') {
+        container('dind') {}
+      }
       stage('Test skaffold') {
         git 'https://github.com/takara9/cowweb.git'
         container('skaffold-insider') {
