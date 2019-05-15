@@ -30,7 +30,7 @@ podTemplate(
         git 'https://github.com/takara9/cowweb.git'
         container('skaffold-insider') {
           sh """
-            docker login --username=$DOCKER_ID_USR --password=$DOCKER_ID_PSW --host=$DOCKER_HOST
+            docker login --username=$DOCKER_ID_USR --password=$DOCKER_ID_PSW $DOCKER_HOST
             skaffold run -p release
           """
         }
