@@ -8,7 +8,7 @@ podTemplate(
     emptyDirVolume(mountPath: '/var/lib/docker', name: 'dind-storage')
   ],
   envVars: [
-    podEnvVar(key: 'DOCKER_HOST', key: 'tcp://localhost:2375')
+    podEnvVar(key: 'DOCKER_HOST', value: 'tcp://localhost:2375')
   ] 
   
 ) {
